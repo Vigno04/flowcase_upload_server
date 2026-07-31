@@ -27,7 +27,7 @@ jobs:
           docker run --rm -v ${{ github.workspace }}:/src -w /src \
           --platform linux/${{ matrix.arch }} \
           python:3.11-slim \
-          bash -c "apt-get update && apt-get install -y gcc binutils && pip install pyinstaller && pip install -r requirements.txt && pyinstaller --onefile flowcase_upload_server.py"
+          bash -c "apt-get update && apt-get install -y gcc binutils && pip install scons pyinstaller && pip install -r requirements.txt && pyinstaller --onefile flowcase_upload_server.py"
 
       - name: Package
         run: |
